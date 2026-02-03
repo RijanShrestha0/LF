@@ -1,0 +1,55 @@
+/* App container */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #bdbdbd;
+  margin: 0;
+  padding: 0;
+  place-content: center;
+  color: #000000;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+  margin-top: 20px;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #000000;
+}
+
+/* Form styles */
+form, .transaction-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+input, select {
+  padding: 8px 12px;
+  margin: 5px 0;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: rgb(44, 44, 44);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
