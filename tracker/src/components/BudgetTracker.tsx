@@ -1,25 +1,35 @@
 import './BudgetTracker.css'
-import { Button } from './button';
-import { Input } from './Input';
+import { useState } from 'react'
+import BudgetForm from './BudgetForm'
 
 const BudgetTracker = () => {
-    return (
-        <div className="budget-tracker">
-            <div>
-                <h2>Budget Tracker Component</h2>
-                <form>
-                    <Input id='expense' text="Enter expense..." />
-                    <Input id='amount' text="Enter amount..." />
-                    <Input id='date' type="date" text="Select date..." />
-                    <Button text="Submit" onClick={() => { }} />
-                </form>
-            </div>
+  const [expenses, setExpenses] = useState<any[]>([])
 
-            <div>
-                <h3>Expenses</h3>
-            </div>
-        </div>
-    );
+  const addExpense = (expense: any) => {
+    setExpenses([...expenses, expense])
+  }
+
+  return (
+    <div className="budget-tracker">
+      <h2>Budget Tracker Component</h2>
+      <BudgetForm onAddExpense={addExpense} />
+      <div className="expense-details">
+        <h3>Entered Expenses</h3>
+
+        {expenses.length === 0 && (
+          <p>No expenses added yet.</p>
+        )}
+
+        {expenses.map((item, index) => (
+          <div key={index} className="expense-item">
+            <p><strong>Expense:</strong> {item.expense}</p>
+            <p><strong>Amount:</strong> {item.amount}</p>
+            <p><strong>Date:</strong> {item.date}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
-export default BudgetTracker;
+export default BudgetTracker
