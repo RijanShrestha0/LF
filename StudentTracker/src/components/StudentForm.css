@@ -1,0 +1,78 @@
+h1 {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.student-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.student-form input[type="file"] {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.Student-Container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.student-form {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 450px;
+    gap: 15px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.students-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 400px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: fit-content;
+    padding: 30px;
+    width: 750px;
+}
+
+.students-section h2 {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
