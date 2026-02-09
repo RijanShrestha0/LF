@@ -1,3 +1,5 @@
+import './input.css'
+
 interface InputProps {
     text:string
 }
