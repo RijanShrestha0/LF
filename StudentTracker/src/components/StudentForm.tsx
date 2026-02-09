@@ -103,7 +103,6 @@ export class StudentForm extends Component<object, {
     //     if (selectedDate < maxAgeDate) {
     //         return { isValid: false, message: 'Date of birth seems invalid (over 100 years old)' };
     //     }
-
     //     return { isValid: true, message: '' };
     // };
 
