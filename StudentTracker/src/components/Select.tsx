@@ -5,13 +5,14 @@ interface SelectProps {
     id?: string;
     onChange: (value: string) => void;
     label?: string;
+    value?: string;
 }
 
-export const Select = ({ options, id, onChange, label }: SelectProps) => {
+export const Select = ({ options, id, onChange, label, value }: SelectProps) => {
     return (
         <>
             {label && <label htmlFor={id}>{label}</label>}
-            <select id={id} onChange={(e) => onChange(e.target.value)}>
+            <select id={id} value={value} onChange={(e) => onChange(e.target.value)}>
             {options.map((option, index) => (
                 <option key={index} value={option}>
                     {option}
