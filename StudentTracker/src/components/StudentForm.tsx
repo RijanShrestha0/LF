@@ -32,7 +32,7 @@ export class StudentForm extends Component<object, {
                 phoneNumber: '',
                 email: '',
                 address: '',
-                gender: '',
+                gender: 'Select Gender',
                 photo: '',
             }
         };
@@ -73,14 +73,61 @@ export class StudentForm extends Component<object, {
         }
     };
 
+
+// date validation
+    // validateDate = (dateString: string): { isValid: boolean; message: string } => {
+    //     const selectedDate = new Date(dateString);
+    //     const today = new Date();
+    //     today.setHours(0, 0, 0, 0);
+
+    //     // Check if date is valid
+    //     if (isNaN(selectedDate.getTime())) {
+    //         return { isValid: false, message: 'Please enter a valid date' };
+    //     }
+
+    //     // Check if date is in the future
+    //     if (selectedDate > today) {
+    //         return { isValid: false, message: 'Date of birth cannot be in the future' };
+    //     }
+
+    //     // Check if student is at least 10 years old
+    //     const minAgeDate = new Date();
+    //     minAgeDate.setFullYear(minAgeDate.getFullYear() - 10);
+    //     if (selectedDate > minAgeDate) {
+    //         return { isValid: false, message: 'Student must be at least 10 years old' };
+    //     }
+
+    //     // Check if student is not more than 100 years old
+    //     const maxAgeDate = new Date();
+    //     maxAgeDate.setFullYear(maxAgeDate.getFullYear() - 100);
+    //     if (selectedDate < maxAgeDate) {
+    //         return { isValid: false, message: 'Date of birth seems invalid (over 100 years old)' };
+    //     }
+    //     return { isValid: true, message: '' };
+    // };
+
     handleAddStudent = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const { formData, students } = this.state;
         
-        if (!formData.name || !formData.studentId || !formData.email) {
+        if (!formData.name || !formData.studentId || !formData.dateOfBirth || !formData.email || !formData.address || !formData.phoneNumber || !formData.gender) {
             alert('Please fill in all required fields');
             return;
         }
+
+        // Check if student ID already exists
+        const duplicateStudent = students.find((s) => s.studentId === formData.studentId);
+        if (duplicateStudent) {
+            alert('Student ID already exists. Please enter a unique Student ID.');
+            return;
+        }
+
+        // Validate date
+        // const dateValidation = this.validateDate(formData.dateOfBirth);
+        // if (!dateValidation.isValid) {
+        //     alert(dateValidation.message);
+        //     return;
+        // }
 
         const newStudent: Student = {
             id: Date.now().toString(),
@@ -100,12 +147,11 @@ export class StudentForm extends Component<object, {
                 phoneNumber: '',
                 email: '',
                 address: '',
-                gender: '',
+                gender: 'Select Gender',
                 photo: '',
             }
         });
         
-        alert('Student added successfully!');
     };
 
     handleDeleteStudent = (id: string) => {
@@ -189,7 +235,8 @@ export class StudentForm extends Component<object, {
                     <Select 
                         label="Gender"
                         id='gender' 
-                        options={['Select Gender', 'Male', 'Female', 'Others']} 
+                        options={['Select Gender', 'Male', 'Female', 'Others']}
+                        value={formData.gender}
                         onChange={this.handleSelectChange}
                     />
                     <Button text="Submit" onClick={() => {}} />

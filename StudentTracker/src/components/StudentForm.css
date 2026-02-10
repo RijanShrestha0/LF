@@ -65,9 +65,11 @@ h1 {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    height: fit-content;
+    height: 878px;
     padding: 30px;
     width: 750px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .students-section h2 {
