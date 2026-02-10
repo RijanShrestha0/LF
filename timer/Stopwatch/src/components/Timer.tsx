@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './Timer.css';
 
 type TimerProps = {
   time: number;
@@ -32,7 +33,7 @@ const Timer = ({ time, isRunning, resetTimer }: TimerProps) => {
   }, [isRunning]);
 
   return (
-    <div>
+    <div className='time-display'>
       {formatTime(hours)}:{formatTime(minutes)}:{formatTime(secs)}
     </div>
   );

@@ -3,11 +3,12 @@ import './button.css';
 interface ButtonProps {
     text: string;
     onClick: () => void;
+    id?: string;
 }
 
-export const Button = ({text, onClick}: ButtonProps) => {
+export const Button = ({text, id, onClick}: ButtonProps) => {
     return (
-        <button onClick={onClick}>
+        <button id={id} onClick={onClick}>
             {text}
         </button>
     );
