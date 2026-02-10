@@ -1,0 +1,43 @@
+.Dock {
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* z-index: 1000; */
+}
+
+.DockLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DockLink:hover {
+    margin-top: -10px;
+    transition: margin-top 150ms ease;
+}
+
+.DockLabel {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 8px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.DockLink:hover .DockLabel,
+.DockLink:focus-visible .DockLabel {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

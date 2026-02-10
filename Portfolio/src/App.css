@@ -1,0 +1,112 @@
+* {
+  cursor: none;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  padding: 0;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.Toggle {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  z-index: 1000;
+}
+
+.TypingAnimation {
+  font-size: 50px;
+  font-weight: bold;
+  /* color: #333; */
+  display: inline-block;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  /* animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; */
+}
+
+.Background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  /* height: 100%; */
+  /* background-color: #f0f0f0; */
+  z-index: -1;
+  /* top: 100px; */
+
+  /* border: 1px solid red; */
+  /* padding: 50px; */
+}
+
+.Hero {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  /* z-index: 1000; */
+  border: 1px solid #00000033;
+  background: linear-gradient(135deg, #f0f0f029, #57575742);
+  padding: 60px 30px 0 30px;
+  border-radius: 50px;
+  width: 1050px;
+}
+
+.User__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 0 100px 0;
+}
+
+.User__greeting {
+  margin: 0 0 -1.2rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  /* color: #333; */
+  opacity: 0.6;
+}
+
+.Photo {
+  /* margin-top: 40px  ; */
+  position: relative;
+}
+
+.Profile__image {
+  width: 550px;
+  height: 620px;
+  object-fit: cover;
+  /* z-index: 1000; */
+}
+
+p {
+  font-size: 15px;
+  max-width: 400px;
+  line-height: 1.5;
+  /* color: #555; */
+}
