@@ -23,11 +23,13 @@ function App() {
   return (
     <>
       <div className='timer'>
-        <h1>Timer</h1>
+        <h1>STOPWATCH</h1>
         <Timer time={0} isRunning={isRunning} resetTimer={resetSignal} />
-        <Button text='Start' onClick={() => starttimer()} />
-        <Button text='Stop' onClick={() => stoptimer()} />
-        <Button text='Reset' onClick={() => resettimer()} />
+        <div className='buttons'>
+          <Button id='Start' text='Start' onClick={() => starttimer()} />
+          <Button id='Stop' text='Stop' onClick={() => stoptimer()} />
+          <Button id='Reset' text='Reset' onClick={() => resettimer()} />
+        </div>
       </div>
     </>
   )
